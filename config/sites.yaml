@@ -1,0 +1,69 @@
+sites:
+  - name: books_bs4
+    type: bs4
+    base_url: https://books.toscrape.com
+    list_urls:
+      - https://books.toscrape.com/catalogue/category/books/travel_2/index.html
+    selectors:
+      item: article.product_pod
+      name: h3 a
+      price: p.price_color
+      url: h3 a
+      attr_url: href
+    price_regex: "[\\d\\s,.]+"
+
+  - name: books_selenium
+    type: selenium
+    base_url: https://books.toscrape.com
+    list_urls:
+      - https://books.toscrape.com/catalogue/category/books/travel_2/index.html
+    selectors:
+      wait_for: article.product_pod
+      item: article.product_pod
+      name: h3 a
+      price: p.price_color
+      url: h3 a
+      attr_url: href
+    scroll: false
+    price_regex: "[\\d\\s,.]+"
+
+  - name: ws_static_bs4
+    type: bs4
+    base_url: https://webscraper.io
+    list_urls:
+      - https://webscraper.io/test-sites/e-commerce/static/computers/laptops
+    selectors:
+      item: div.thumbnail
+      name: a.title
+      price: h4.pull-right.price
+      url: a.title
+      attr_url: href
+    price_regex: "[\\d\\s,.]+"
+
+  - name: ws_dynamic_selenium
+    type: selenium
+    base_url: https://webscraper.io
+    list_urls:
+      - https://webscraper.io/test-sites/e-commerce/dynamic/computers/laptops
+    selectors:
+      wait_for: div.thumbnail
+      item: div.thumbnail
+      name: a.title
+      price: h4.price
+      url: a.title
+      attr_url: href
+    scroll: false
+    price_regex: "[\\d\\s,.]+"
+
+  - name: books_scrapy
+    type: scrapy
+    base_url: https://books.toscrape.com
+    list_urls:
+      - https://books.toscrape.com/catalogue/category/books/travel_2/index.html
+    selectors:
+      item: article.product_pod
+      name: h3 a::attr(title)
+      price: p.price_color::text
+      url: h3 a::attr(href)
+    follow_links: false
+    price_regex: "[\\d\\s,.]+"

@@ -1,0 +1,7 @@
+min_margin_percent: 10
+undercut_delta: 1.0
+raise_delta: 0.5
+tolerance_percent: 1.5
+round_to: 1.0
+match_threshold: 75
+brand_boost: 10
