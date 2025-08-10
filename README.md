@@ -53,26 +53,7 @@ source .venv/bin/activate
 
 # Установить зависимости
 pip install -r requirements.txt
-````
-## ⚙️ Структура проекта
-price-monitor/
-├── config/                  # Конфигурационные файлы
-│   ├── sites.yaml           # Настройки сайтов для парсинга
-│   └── pricing.yaml         # Стратегия ценообразования
-├── data/                    # Данные
-│   └── internal_catalog.csv # Ваш каталог товаров
-├── out/                     # Результаты работы
-│   ├── scraped_prices.csv   # Собранные данные
-│   ├── matched.csv          # Сопоставленные товары
-│   ├── comparison.csv       # Сравнение цен
-│   └── recommendations.csv  # Рекомендации
-├── price_monitor/           # Основной код
-│   ├── scrapers/            # Модули парсинга
-│   ├── main.py              # Точка входа
-│   ├── utils.py             # Вспомогательные функции
-│   ├── matching.py          # Сопоставление товаров
-│   ├── compare.py           # Сравнение цен
-│   └── recommend.py         # Генерация рекомендаций
-├── README.md                # Документация
-└── requirements.txt         # Зависимости
+
+
+
 
